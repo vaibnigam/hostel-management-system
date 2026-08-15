@@ -8,7 +8,6 @@ public class Student {
 	private long contactNumber;
 
 	public Student(String id, String name, int age, String roomNumber, long contactNumber) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.age = age;

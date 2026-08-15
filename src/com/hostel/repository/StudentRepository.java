@@ -18,13 +18,22 @@ public class StudentRepository {
 		return students.get(id);
 	}
 
-	public List<Student> findByName(String name){
+	public List<Student> findByName(String name) {
 		List<Student> result = new ArrayList<Student>();
 		for (Student s : students.values()) {
-			if(s.getName().toLowerCase().contains(name.toLowerCase())) {
+			if (s.getName().toLowerCase().contains(name.toLowerCase())) {
 				result.add(s);
 			}
 		}
 		return result;
+	}
+
+	public List<Student> getAllStudents() {
+		return new ArrayList<Student>(students.values());
+	}
+
+	public boolean removeStudent(String id) {
+		Student removed = students.remove(id);
+		return removed != null;
 	}
 }
