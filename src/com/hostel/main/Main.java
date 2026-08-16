@@ -1,5 +1,6 @@
 package com.hostel.main;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -30,7 +31,16 @@ public class Main {
 			System.out.println("10. Exit");
 			System.out.print("Enter your choice: ");
 
-			int choice = scanner.nextInt();
+			int choice;
+			try {
+				choice = scanner.nextInt();
+				scanner.nextLine();
+			} catch (InputMismatchException e) {
+				System.out.println("Invalid input. Please enter a number.");
+				scanner.nextLine(); // galat input ko buffer se clear karo
+				continue; // is iteration ko yahin chhodo, loop ke start pe wapas jao
+			}
+
 			scanner.nextLine();
 			switch (choice) {
 			case 1:
