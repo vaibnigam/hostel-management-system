@@ -41,7 +41,6 @@ public class Main {
 				continue; // is iteration ko yahin chhodo, loop ke start pe wapas jao
 			}
 
-			scanner.nextLine();
 			switch (choice) {
 			case 1:
 				System.out.print("Enter Student ID: ");
