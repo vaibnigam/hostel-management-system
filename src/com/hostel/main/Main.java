@@ -3,6 +3,7 @@ package com.hostel.main;
 import java.util.List;
 import java.util.Scanner;
 
+import com.hostel.loader.DataLoader;
 import com.hostel.model.Room;
 import com.hostel.model.Student;
 import com.hostel.service.HostelService;
@@ -12,7 +13,9 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		HostelService hostelService = new HostelService();
 		boolean running = true;
-
+		DataLoader dataLoader = new DataLoader();
+		dataLoader.loadRoomsFromFile("data/rooms.txt", hostelService);
+		dataLoader.loadStudentsFromFile("data/students.txt", hostelService);
 		while (running) {
 			System.out.println("\n===== Hostel Management System =====");
 			System.out.println("1. Add Student");
